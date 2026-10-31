@@ -4,7 +4,7 @@
 -->
 <template>
   <header>
-    <h1>Mijn Vue-app</h1>
+    <h1>De app van Abenezer</h1>
     <nav>
       <RouterLink to="/">Home</RouterLink>
       <!-- Dag 7: haal de commentaartekens weg om de API-pagina te tonen -->
