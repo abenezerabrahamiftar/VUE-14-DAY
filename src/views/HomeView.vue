@@ -9,13 +9,20 @@
   De code per dag staat in 01_Dagplan_14_dagen.docx. Typ het zelf over.
 -->
 <script setup>
+import { ref } from 'vue'
 import { items } from '../data.js'
+
+const toonBeschrijving = ref(true)
 </script>
 
 <template>
   <h1>Mijn lijst</h1>
+  <button @click="toonBeschrijving = !toonBeschrijving">
+    {{ toonBeschrijving ? 'Verberg' : 'Toon' }} beschrijvingen
+  </button>
+
   <div v-for="item in items" :key="item.id">
     <h2>{{ item.naam }}</h2>
-    <p>{{ item.beschrijving }}</p>
+   <p v-if="toonBeschrijving">{{ item.beschrijving }}</p>
   </div>
 </template>

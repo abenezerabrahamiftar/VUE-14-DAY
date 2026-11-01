@@ -4,7 +4,8 @@
 import { ref } from 'vue'
 
 export const items = ref([
-  { id: 1, naam: 'Appel', beschrijving: 'Rood en zoet' },
-  { id: 2, naam: 'Banaan', beschrijving: 'Geel en zacht' },
-  { id: 3, naam: 'Peer', beschrijving: 'Groen en sappig' },
+  { id: 1, naam: 'Ronaldo', beschrijving: 'Portugees, speelde bij Real Madrid' },
+  { id: 2, naam: 'Messi', beschrijving: 'Argentijn, speelde bij Barcelona ' },
+  { id: 3, naam: 'Neymar', beschrijving: 'Brazilian, speelde bij PSG' },
+  { id: 3, naam: 'Mbappe', beschrijving: 'Frans, speelde bij Monaco' },
 ])
