@@ -10,12 +10,32 @@
   Dag 4: voeg een verwijderknop toe met defineEmits(['verwijder'])
   Dag 6: voeg een RouterLink naar de detailpagina toe
 -->
+
 <script setup>
-// Typ hier je props
+defineProps({
+  id: Number,
+  naam: String,
+  beschrijving: String,
+  toonBeschrijving: Boolean,
+  club: String,
+})
 </script>
 
 <template>
   <div class="kaart">
-    <!-- Typ hier de inhoud van je kaartje -->
+    <h2>{{ naam }}</h2>
+    <!-- De clubnaam toegevoegd onder de spelersnaam -->
+    <h3 v-if="club">{{ club }}</h3> 
+    <p v-if="toonBeschrijving">{{ beschrijving }}</p>
   </div>
 </template>
+
+<style scoped>
+.kaart {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 12px 0;
+  background: white;
+}
+</style>

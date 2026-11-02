@@ -11,6 +11,7 @@
 <script setup>
 import { ref } from 'vue'
 import { items } from '../data.js'
+import ItemKaart from '../components/ItemKaart.vue'
 
 const toonBeschrijving = ref(true)
 </script>
@@ -21,8 +22,13 @@ const toonBeschrijving = ref(true)
     {{ toonBeschrijving ? 'Verberg' : 'Toon' }} beschrijvingen
   </button>
 
-  <div v-for="item in items" :key="item.id">
-    <h2>{{ item.naam }}</h2>
-   <p v-if="toonBeschrijving">{{ item.beschrijving }}</p>
-  </div>
+  <ItemKaart
+    v-for="item in items"
+    :key="item.id"
+    :id="item.id"
+    :naam="item.naam"
+    :beschrijving="item.beschrijving"
+    :toonBeschrijving="toonBeschrijving"
+    :club="item.club"
+  />
 </template>
