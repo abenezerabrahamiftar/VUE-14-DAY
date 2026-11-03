@@ -14,6 +14,9 @@ import { items } from '../data.js'
 import ItemKaart from '../components/ItemKaart.vue'
 
 const toonBeschrijving = ref(true)
+function verwijder(id) {
+  items.value = items.value.filter((item) => item.id !== id)
+}
 </script>
 
 <template>
@@ -29,6 +32,7 @@ const toonBeschrijving = ref(true)
     :naam="item.naam"
     :beschrijving="item.beschrijving"
     :toonBeschrijving="toonBeschrijving"
+    @verwijder="verwijder"
     :club="item.club"
   />
 </template>

@@ -16,17 +16,19 @@ defineProps({
   id: Number,
   naam: String,
   beschrijving: String,
-  toonBeschrijving: Boolean,
   club: String,
+  toonBeschrijving: Boolean,
 })
+
+const emit = defineEmits(['verwijder'])
 </script>
 
 <template>
   <div class="kaart">
     <h2>{{ naam }}</h2>
-    <!-- De clubnaam toegevoegd onder de spelersnaam -->
-    <h3 v-if="club">{{ club }}</h3> 
+    <p>{{ club }}</p>
     <p v-if="toonBeschrijving">{{ beschrijving }}</p>
+    <button @click="emit('verwijder', id)">Verwijder</button>
   </div>
 </template>
 
