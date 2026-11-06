@@ -29,6 +29,7 @@ const emit = defineEmits(['verwijder'])
     <p>{{ club }}</p>
     <p v-if="toonBeschrijving">{{ beschrijving }}</p>
     <button @click="emit('verwijder', id)">Verwijder</button>
+    <RouterLink :to="{ name: 'detail', params: { id } }">Bekijk</RouterLink>
   </div>
 </template>
 

@@ -11,11 +11,23 @@
   6. Haal in src/router/index.js het commentaar weg bij de detail-route
 -->
 <script setup>
-// Typ hier je code
+import { useRoute } from 'vue-router'
+import { items } from '../data.js'
+
+const route = useRoute()
+const item = items.value.find((i) => i.id === Number(route.params.id))
 </script>
 
 <template>
-  <div>
-    <!-- Typ hier je detailpagina -->
+  <div v-if="item">
+    <h1>{{ item.naam }}</h1>
+    <p><strong>Club:</strong> {{ item.club }}</p>
+    <p>{{ item.beschrijving }}</p>
+    <RouterLink to="/">Terug</RouterLink>
+  </div>
+
+  <div v-else>
+    <p>Deze voetballer bestaat niet.</p>
+    <RouterLink to="/">Terug</RouterLink>
   </div>
 </template>
